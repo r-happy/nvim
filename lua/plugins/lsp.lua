@@ -1,5 +1,4 @@
 return {
-
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -9,6 +8,9 @@ return {
         --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
         tsserver = {
           enabled = false,
+        },
+        rust_analyzer = {
+          enabled = true,
         },
         ts_ls = {
           enabled = false,
