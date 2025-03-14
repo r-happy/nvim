@@ -3,6 +3,9 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       -- make sure mason installs the server
+      inlayHints = {
+        enabled = false,
+      },
       servers = {
         --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
         --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
@@ -11,6 +14,7 @@ return {
         },
         rust_analyzer = {
           enabled = true,
+          inlayHints = { enabled = false },
         },
         ts_ls = {
           enabled = false,
