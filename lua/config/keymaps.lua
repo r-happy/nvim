@@ -10,8 +10,10 @@ keymap.set("n", "<gd>", "<cmd>Telescope lsp_definitions<CR>", { noremap = true, 
 keymap.set("n", "T", "<cmd>Neotree toggle<CR>")
 keymap.set("n", "<C-n>", "*", { noremap = true, silent = true })
 
-keymap.set("i", "<C-h>", "<Left>", { noremap = true, silent = true })
-keymap.set("i", "<C-l>", "<Right>", { noremap = true, silent = true })
+keymap.set("i", "<C-b>", "<Left>", { noremap = true, silent = true })
+keymap.set("i", "<C-f>", "<Right>", { noremap = true, silent = true })
+keymap.set("i", "<C-n>", "<Down>", { noremap = true, silent = true })
+keymap.set("i", "<C-p>", "<Up>", { noremap = true, silent = true })
 
 -- ノーマルモードで空行を追加（挿入モードには入らない）
 keymap.set("n", "<C-o>", "o<Esc>", { noremap = true, silent = true }) -- 下に空行

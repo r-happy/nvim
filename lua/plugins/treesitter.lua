@@ -58,6 +58,7 @@ return {
         "xml",
         "go",
         "yaml",
+        "ruby",
       },
       incremental_selection = {
         enable = true,
