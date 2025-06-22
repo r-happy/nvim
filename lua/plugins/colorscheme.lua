@@ -34,12 +34,23 @@ return {
   --   priority = 1000, -- make sure to load this before all the other start plugins
   --   config = function()
   --     require("onedark").setup({
-  --       style = "dark",
+  --       style = "warm",
   --     })
   --
   --     -- Enable theme
   --     require("onedark").load()
   --   end,
   -- },
-  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
+  {
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.gruvbox_material_enable_italic = true
+      vim.cmd.colorscheme("gruvbox-material")
+      vim.go.background = "light"
+    end,
+  },
 }
