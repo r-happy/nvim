@@ -46,7 +46,6 @@ vim.g.mapleader = " "
 vim.cmd("colorscheme kanagawa-wave")
 
 -- plugins
--- 例: 不要な標準プラグインを読み込まない
 local disabled_builtins = {
     "netrw",
     "netrwPlugin",

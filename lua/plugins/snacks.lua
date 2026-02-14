@@ -12,7 +12,7 @@ return {
                     {
                         section = "terminal",
                         cmd =
-                        "chafa ~/.config/nvim/dog.jpg --format symbols --symbols vhalf --size 60x17 --stretch; sleep .1",
+                        "chafa ~/.config/nvim/dog.jpg --format symbols --symbols vhalf --size 40x17 --stretch; sleep .1",
                         height = 17,
                         padding = 1,
                     },
