@@ -23,7 +23,9 @@ return {
                     },
                 },
             },
-            explorer = { enabled = true },
+            explorer = {
+                enabled = true,
+            },
             indent = {
                 enabled = true,
                 indent = {

@@ -28,8 +28,30 @@ vim.keymap.set(
     'n',
     'spg',
     function() Snacks.picker.grep() end,
-    { desc = "picker recent files" }
+    { desc = "grep files" }
 )
+vim.keymap.set(
+    'n',
+    'gd',
+    function() Snacks.picker.lsp_definitions() end,
+    { desc = "move define" }
+)
+vim.keymap.set('n', 'spl', function()
+    local actions = {
+        { "Definitions",     Snacks.picker.lsp_definitions },
+        { "Implementations", Snacks.picker.lsp_implementations },
+        { "Symbols",         Snacks.picker.lsp_symbols },
+        { "References",      Snacks.picker.lsp_references },
+        { "Type Definition", Snacks.picker.lsp_type_definitions },
+    }
+
+    vim.ui.select(actions, {
+        prompt = "LSP Actions:",
+        format_item = function(item) return item[1] end,
+    }, function(choice)
+        if choice then choice[2]() end
+    end)
+end, { desc = "LSP Action Picker" })
 
 -- flash
 vim.keymap.set(
