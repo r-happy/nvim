@@ -87,3 +87,6 @@ vim.keymap.set(
         })
     end, { desc = "Snacks: Toggle Main Terminal" }
 )
+
+-- markdown
+vim.keymap.set('v', '<leader>b', [[:s/\s*\\*$/ \\/ <CR>]], { desc = 'Add MD line breaks' })

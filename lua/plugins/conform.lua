@@ -24,6 +24,7 @@ return {
                     yaml = { "prettier" },
                     markdown = { "prettier" },
                     graphql = { "prettier" },
+                    tex = { "latexindent" },
                 },
 
                 formatters = {
