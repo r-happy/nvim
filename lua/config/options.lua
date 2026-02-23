@@ -23,21 +23,36 @@ vim.opt.wrap = false
 vim.opt.wildmenu = true
 
 -- clipboard
--- for wsl
-vim.g.clipboard = {
-    name = 'win32yank-wsl',
-    copy = {
-        ["+"] = 'win32yank.exe -i --crlf',
-        ["*"] = 'win32yank.exe -i --crlf',
-    },
-    paste = {
-        ["+"] = 'win32yank.exe -o --lf',
-        ["*"] = 'win32yank.exe -o --lf',
-    },
-
-    cache_enabled = 0,
-}
 vim.opt.clipboard = "unnamedplus"
+-- open
+if vim.fn.has("wsl") == 1 then
+    vim.ui.open = function(path)
+        local scrubbed_path = path:gsub("^file://", "")
+
+        local cmd = "wslpath -w " .. vim.fn.shellescape(scrubbed_path)
+        local handle = io.popen(cmd)
+        local win_path = handle:read("*a"):gsub("%s+$", "")
+        handle:close()
+
+        if win_path ~= "" then
+            vim.fn.jobstart({ "explorer.exe", win_path })
+        end
+    end
+
+
+    vim.g.clipboard = {
+        name = 'win32yank-wsl',
+        copy = {
+            ["+"] = 'win32yank.exe -i --crlf',
+            ["*"] = 'win32yank.exe -i --crlf',
+        },
+        paste = {
+            ["+"] = 'win32yank.exe -o --lf',
+            ["*"] = 'win32yank.exe -o --lf',
+        },
+        cache_enabled = 0,
+    }
+end
 
 -- color
 vim.opt.termguicolors = true
