@@ -13,7 +13,5 @@ return {
                 show_hidden = true
             },
         },
-        -- Optional dependencies
-        dependencies = { "mini.icons" },
     }
 }

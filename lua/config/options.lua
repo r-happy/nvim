@@ -68,9 +68,6 @@ vim.opt.swapfile = false
 -- cmd
 vim.opt.showcmd = true
 
--- leader
-vim.g.mapleader = " "
-
 -- color
 vim.cmd("colorscheme kanagawa-wave")
 
