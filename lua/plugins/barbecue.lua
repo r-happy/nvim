@@ -6,7 +6,7 @@ return {
         event = "VeryLazy",
         dependencies = {
             "SmiteshP/nvim-navic",
-            "echasnovski/mini.icons",
+            "nvim-tree/nvim-web-devicons",
         },
         opts = {
             -- configurations go here

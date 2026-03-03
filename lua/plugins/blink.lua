@@ -11,8 +11,6 @@ return {
         -- If you use nix, you can build from source using latest nightly rust with:
         -- build = 'nix run .#build-plugin',
 
-        event = "InsertEnter",
-
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
         opts = {
@@ -48,6 +46,14 @@ return {
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
                 default = { 'lsp', 'path', 'snippets', 'buffer' },
+                providers = {
+                    snippets = {
+                        opts = {
+                            -- htmlangularでhtmlのスニペットも読み込む
+                            extended_filetypes = { htmlangular = { 'html' } },
+                        },
+                    },
+                },
             },
 
             -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
